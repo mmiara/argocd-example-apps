@@ -17,11 +17,11 @@ function indent {
   printf  " %.0s" {1..2} && echo "$1"
 }
 
-#BACKSTAGE_URL=$(kubectl get ingress -n ${NAMESPACE} backstage --no-headers=true -o=custom-columns=URL:.spec.rules[0].host)
+SYNCWAVES_URL=$(kubectl get ingress -n ${NAMESPACE} backstage --no-headers=true -o=custom-columns=URL:.spec.rules[0].host)
 
 clear
 
 sep "Sync-Waves:"
-#indent "URL: https://${BACKSTAGE_URL}"
+#indent "URL: https://${SYNCWAVES_URL}"
 indent "No Login Information Available for SyncWaves"
 sep
